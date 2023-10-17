@@ -3,6 +3,11 @@ from telebot.types import Message, InlineKeyboardMarkup, InlineKeyboardButton
 import parser
 from parser.helpers import check_info_fullness, combine_dicts
 
+
+import chromedriver_autoinstaller
+
+chromedriver_autoinstaller.install()
+
 TOKEN = "6498698131:AAHEETA69Y5uS1BQi39vJCLttgZFFrLpsUc"
 bot = TeleBot(TOKEN)
 
