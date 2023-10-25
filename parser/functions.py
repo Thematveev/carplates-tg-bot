@@ -1,3 +1,5 @@
+import time
+
 from . import driver
 from selenium.webdriver.common.by import By
 from selenium.common import NoSuchElementException, TimeoutException
@@ -55,6 +57,8 @@ def get_plates_info(plates: str):
 # mtsbu
 def get_plates_info_mtsbu(plates: str):
     driver.get('https://policy-web.mtsbu.ua/')
+    driver.find_element(By.ID, 'carNumber-tab').click()
+    time.sleep(2) # to fix in future
     plates_input = driver.find_element(By.XPATH, '//*[@id="RegNoModel_PlateNumber"]')
     plates_input.send_keys(plates)
 
